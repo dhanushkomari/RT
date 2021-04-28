@@ -14,8 +14,9 @@ def SeleceStdView(request):
 
 def SectionView(request, std_id):
     sec = Section.objects.filter(standard__std_id__iexact = std_id)
+    cls = Standard.objects.get(std_id = std_id)
     print(sec)
-    return HttpResponse('done')
+    return render(request, 'RTApp/sec.html', {'sec':sec, 'cls':cls})
 
 
 
