@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% if s %}
+        {% for std in s %}
+            <h1>{{std.std_name}}</h1>
+            <h3>{{std.std_description}}</h3>
+            
+            <a href="{{std.get_url}}">button-{{std.std_name|title}}</a><br><br>
+        {% endfor %}
+    {% endif %}
+</body>
+</html>
